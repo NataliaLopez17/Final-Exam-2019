@@ -95,12 +95,12 @@ public class LoopsAndArraysC {
 		 * @return
 		 */
 		public static int findMaxCard(BriscaCard[] deck) {
+			BriscaCard neue = deck[0];
 			for(int i = 0; i < deck.length; i++) {
 				for(int j = i+1; j < deck.length; j++) {
-					if(deck[i].getSuit().compareTo(deck[j].getSuit()) < 1) {
+					if(deck[i].compareTo(deck[j]) > 0) {
 						return j;
 					}
-					return i;
 				}
 			}
 			return -1;
